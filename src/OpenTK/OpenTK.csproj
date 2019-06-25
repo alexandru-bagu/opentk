@@ -77,7 +77,7 @@
     <DebugType>pdbonly</DebugType>
   </PropertyGroup>
   <PropertyGroup>
-    <SignAssembly>True</SignAssembly>
+    <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
     <AssemblyOriginatorKeyFile>..\..\OpenTK.snk</AssemblyOriginatorKeyFile>
@@ -798,10 +798,10 @@
     </PostBuildEvent>
   </PropertyGroup>
   <Target Name="AfterBuild">
-    <Exec Condition="$(OS) == 'Windows_NT' and $(Configuration) == 'Debug'" Command="$(OutputPath)..\..\..\Generator.Rewrite\bin\Debug\Rewrite.exe --assembly $(OutputPath)OpenTK.dll --signing-key ..\..\OpenTK.snk --debug" />
-    <Exec Condition="$(OS) == 'Windows_NT' and $(Configuration) == 'Release'" Command="$(OutputPath)..\..\..\Generator.Rewrite\bin\Release\Rewrite.exe --assembly $(OutputPath)OpenTK.dll --signing-key ..\..\OpenTK.snk" />
-    <Exec Condition="$(OS) != 'Windows_NT' and $(Configuration) == 'Debug'" Command="mono $(OutputPath)../../../Generator.Rewrite/bin/Debug/Rewrite.exe --assembly $(OutputPath)OpenTK.dll --signing-key ../../OpenTK.snk --debug" />
-    <Exec Condition="$(OS) != 'Windows_NT' and $(Configuration) == 'Release'" Command="mono $(OutputPath)../../../Generator.Rewrite/bin/Release/Rewrite.exe --assembly $(OutputPath)OpenTK.dll --signing-key ../../OpenTK.snk" />
+    <Exec Condition="$(OS) == 'Windows_NT' and $(Configuration) == 'Debug'" Command="$(TargetDir)..\..\..\Generator.Rewrite\bin\Debug\Rewrite.exe --assembly $(TargetDir)OpenTK.dll --signing-key ..\..\OpenTK.snk --debug" />
+    <Exec Condition="$(OS) == 'Windows_NT' and $(Configuration) == 'Release'" Command="$(TargetDir)..\..\..\Generator.Rewrite\bin\Release\Rewrite.exe --assembly $(TargetDir)OpenTK.dll --signing-key ..\..\OpenTK.snk" />
+    <Exec Condition="$(OS) != 'Windows_NT' and $(Configuration) == 'Debug'" Command="mono $(TargetDir)../../../Generator.Rewrite/bin/Debug/Rewrite.exe --assembly $(TargetDir)OpenTK.dll --signing-key ../../OpenTK.snk --debug" />
+    <Exec Condition="$(OS) != 'Windows_NT' and $(Configuration) == 'Release'" Command="mono $(TargetDir)../../../Generator.Rewrite/bin/Release/Rewrite.exe --assembly $(TargetDir)OpenTK.dll --signing-key ../../OpenTK.snk" />
   </Target>
   <ProjectExtensions>
     <MonoDevelop>

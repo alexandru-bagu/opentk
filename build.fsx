@@ -15,6 +15,8 @@ open System
 open System.IO
 open System.Diagnostics
 
+EnvironmentHelper.setBuildParam "VisualStudioVersion" "15.0"
+
 // --------------------------------------------------------------------------------------
 // START TODO: Provide project-specific details below
 // --------------------------------------------------------------------------------------
